@@ -62,8 +62,8 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
 ENV USER_NAME dev
-ARG host_uid=1001
-ARG host_gid=1001
+ARG host_uid=1000
+ARG host_gid=1000
 RUN groupadd -g $host_gid $USER_NAME && \
     useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER_NAME
 
