@@ -1,1 +1,1 @@
-Dockerfile.yocto
+Dockerfile.zephyr

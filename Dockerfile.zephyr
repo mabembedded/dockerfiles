@@ -55,14 +55,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-ENV USER_NAME dev
-ARG host_uid=1000
-ARG host_gid=1000
-RUN groupadd -g $host_gid $USER_NAME && \
-    useradd -g $host_gid -m -s /bin/bash -u $host_uid $USER_NAME
+RUN adduser --system --no-create-home dev
+RUN mkdir /data && chown dev /data
 
 USER dev
-RUN git config --global user.email "mab@mab-labs.com"
-RUN git config --global user.name "Mohammed Billoo"
-
-WORKDIR /home/dev
